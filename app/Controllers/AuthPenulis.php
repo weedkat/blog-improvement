@@ -49,23 +49,22 @@ class AuthPenulis extends BaseController
             if ($penulis["password"] !== md5($password)) {
                 sweetalert('Maaf password Anda salah', 'error', 'Gagal!');
                 return redirect()->to('/authpenulis')->withInput();
-            } else {
-                $sessData = [
-                    'emailPenulis' => $penulis["email"],
-                    'idpenulis' => $penulis["idpenulis"],
-                    'isLoggedInPenulis' => TRUE
-                ];
-
-                session()->set($sessData);
-
-                // if ($agent->isReferral()) {
-                //     dd($agent->getReferrer());
-                //     // return redirect()->to($agent->getReferrer());
-                // } else {
-                //     dd($agent->getReferrer());
-                // }
-                return redirect()->to('/penulis');
             }
+            $sessData = [
+                'emailPenulis' => $penulis["email"],
+                'idpenulis' => $penulis["idpenulis"],
+                'isLoggedInPenulis' => TRUE
+            ];
+
+            session()->set($sessData);
+
+            // if ($agent->isReferral()) {
+            //     dd($agent->getReferrer());
+            //     // return redirect()->to($agent->getReferrer());
+            // } else {
+            //     dd($agent->getReferrer());
+            // }
+            return redirect()->to('/penulis');
         } else {
             sweetalert('Maaf akun Anda tidak terdaftar', 'error', 'Gagal!');
             return redirect()->to('/authpenulis')->withInput();
