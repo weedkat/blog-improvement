@@ -18,12 +18,12 @@ class PenulisModel extends Model
     protected $updatedField  = 'tgl_update';
 
     // FUNCTION & METHOD //
-    public function getDataPenulis($id = false)
+    public function getDataPenulis($ids = false)
     {
-        if ($id === false) {
+        if ($ids === false) {
             return $this->findAll();
         }
 
-        return $this->penulisModel->where(['idpenulis' => $id])->first();
+        return $this->penulisModel->where(['idpenulis' => $ids])->first();
     }
 }

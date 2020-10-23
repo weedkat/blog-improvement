@@ -18,15 +18,15 @@ class PostModel extends Model
     protected $updatedField  = 'tgl_update';
 
     // FUNCTION & METHOD //
-    public function getDataPost($id = false)
+    public function getDataPost($ids = false)
     {
-        if ($id === false) {
+        if ($ids === false) {
             return $this->join('penulis', 'post.idpenulis = penulis.idpenulis')
                 ->join('kategori', 'post.idkategori = kategori.idkategori')
                 ->findAll();
         }
 
-        return $this->postModel->where(['idpost' => $id])->first();
+        return $this->postModel->where(['idpost' => $ids])->first();
     }
 
     public function getDataPostBySlug($slug)
@@ -37,14 +37,14 @@ class PostModel extends Model
             ->first();
     }
 
-    public function getDataPostByPenulis($idpenulis)
+    public function getDataPostByPenulis($idspenulis)
     {
-        return $this->postModel->where(['idpost' => $idpenulis])->first();
+        return $this->postModel->where(['idpost' => $idspenulis])->first();
     }
 
-    public function getOnePostByPenulis($idpost, $idpenulis)
+    public function getOnePostByPenulis($idspost, $idspenulis)
     {
-        return $this->postModel->where(['idpenulis' => $idpenulis, 'idpost' => $idpost]);
+        return $this->postModel->where(['idpenulis' => $idspenulis, 'idpost' => $idspost]);
     }
 
     public function postTerbaru($limit = null)
@@ -71,22 +71,22 @@ class PostModel extends Model
             ->orLike('judul', $keyword);
     }
 
-    public function groupPost($id)
+    public function groupPost($ids)
     {
         return $this->join('kategori', 'post.idkategori = kategori.idkategori')
-            ->where(['kategori.idkategori' => $id])
+            ->where(['kategori.idkategori' => $ids])
             ->orderBy('post.tgl_insert', 'DESC');
     }
 
-    // public function prevPost($id)
+    // public function prevPost($ids)
     // {
-    //     // return $this->db->query("SELECT * FROM divisi WHERE id_divisi = (SELECT max(id_divisi) FROM divisi WHERE id_divisi < $id)");
-    //     // return $this->where(['idpost' => $this->selectMax('idpost')->where('idpost' < $id)])->find();
+    //     // return $this->db->query("SELECT * FROM divisi WHERE id_divisi = (SELECT max(id_divisi) FROM divisi WHERE id_divisi < $ids)");
+    //     // return $this->where(['idpost' => $this->selectMax('idpost')->where('idpost' < $ids)])->find();
     // }
 
-    // public function nextPost($id)
+    // public function nextPost($ids)
     // {
-    //     // return $this->db->query("SELECT * FROM divisi WHERE id_divisi = (SELECT max(id_divisi) FROM divisi WHERE id_divisi < $id)");
-    //     // return $this->where('idpost', $this->selectMax('idpost')->where('idpost' > $id))->find();
+    //     // return $this->db->query("SELECT * FROM divisi WHERE id_divisi = (SELECT max(id_divisi) FROM divisi WHERE id_divisi < $ids)");
+    //     // return $this->where('idpost', $this->selectMax('idpost')->where('idpost' > $ids))->find();
     // }
 }

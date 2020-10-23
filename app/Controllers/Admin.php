@@ -23,18 +23,18 @@ class Admin extends BaseController
         return view('admin/dashboard/dashboard');
     }
 
-    public function edit($id)
+    public function edit($ids)
     {
         $data = [
             'judul' => 'Form Ubah Profile Admin',
             'validation' => \Config\Services::validation(),
-            'admin' => $this->adminModel->find($id)
+            'admin' => $this->adminModel->find($ids)
         ];
 
         return view('admin/profile/edit_profile', $data);
     }
 
-    public function update($id)
+    public function update($ids)
     {
         if (!$this->validate([
             'nama' => [
@@ -63,13 +63,13 @@ class Admin extends BaseController
             return redirect()->back()->withInput()->with('validation', $validation);
         }
 
-        $admin = $this->adminModel->find($id);
+        $admin = $this->adminModel->find($ids);
         $npassword = md5($this->request->getVar('password'));
         $oldpassword = $admin['password'];
 
         if ($npassword == $oldpassword) {
             $this->adminModel->save([
-                'idadmin' => $id,
+                'idadmin' => $ids,
                 'nama' => $this->request->getVar('nama'),
                 'email' => $this->request->getVar('email')
             ]);
@@ -99,7 +99,7 @@ class Admin extends BaseController
         return view('admin/reset_penulis/penulis_data', $data);
     }
 
-    public function process_reset($id)
+    public function process_reset($ids)
     {
         $user_session = session()->get('idadmin');
         if (!($user_session)) {
@@ -107,14 +107,14 @@ class Admin extends BaseController
         }
 
         $this->penulisModel->save([
-            'idpenulis' => $id,
-            'password' => md5($this->penulisModel->find($id)["email"])
+            'idpenulis' => $ids,
+            'password' => md5($this->penulisModel->find($ids)["email"])
         ]);
         sweetalert('Password penulis berhasil direset', 'success', 'Berhasil!');
         return redirect()->to('/admin/reset_penulis')->withInput();
     }
 
-    public function ubahPassword($id)
+    public function ubahPassword($ids)
     {
         $user_session = session()->has('idadmin');
         if (!($user_session)) {
@@ -124,13 +124,13 @@ class Admin extends BaseController
         $data = [
             'judul' => 'Form Ubah Password Admin',
             'validation' => \Config\Services::validation(),
-            'admin' => $this->adminModel->find($id)
+            'admin' => $this->adminModel->find($ids)
         ];
 
         return view('admin/profile/change_password', $data);
     }
 
-    public function updatePassword($id)
+    public function updatePassword($ids)
     {
         $user_session = session()->has('idadmin');
         if (!($user_session)) {
@@ -166,13 +166,13 @@ class Admin extends BaseController
             return redirect()->back()->withInput()->with('validation', $validation);
         }
 
-        $admin = $this->adminModel->find($id);
+        $admin = $this->adminModel->find($ids);
         $npassword = md5($this->request->getVar('password'));
         $oldpassword = $admin['password'];
 
         if ($npassword == $oldpassword) {
             $this->adminModel->save([
-                'idadmin' => $id,
+                'idadmin' => $ids,
                 'password' => md5($this->request->getVar('newpassword'))
             ]);
 

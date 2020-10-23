@@ -18,12 +18,12 @@ class AdminModel extends Model
     protected $updatedField  = 'tgl_update';
 
     // FUNCTION & METHOD //
-    public function getDataAdmin($id = false)
+    public function getDataAdmin($ids = false)
     {
-        if ($id === false) {
+        if ($ids === false) {
             return $this->findAll();
         }
 
-        return $this->adminModel->where(['idadmin' => $id])->first();
+        return $this->adminModel->where(['idadmin' => $ids])->first();
     }
 }

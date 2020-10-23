@@ -74,20 +74,20 @@ class Kategori extends BaseController
         return redirect()->to('/kategori');
     }
 
-    public function delete($id){
+    public function delete($ids){
         $user_session = session()->has('idadmin');
         if (!($user_session)) {
             return redirect()->to('/authadmin');
         }
 
-        $this->kategoriModel->delete($id);
+        $this->kategoriModel->delete($ids);
 
         sweetalert('Data berhasil dihapus', 'success', 'Berhasil!');
 
         return redirect()->to('/kategori');
     }
 
-    public function edit($id){
+    public function edit($ids){
         $user_session = session()->has('idadmin');
         if (!($user_session)) {
             return redirect()->to('/authadmin');
@@ -96,13 +96,13 @@ class Kategori extends BaseController
         $data = [
             'judul' => 'Form Ubah Kategori',
             'validation' => \Config\Services::validation(),
-            'kategori' => $this->kategoriModel->find($id)
+            'kategori' => $this->kategoriModel->find($ids)
         ];
 
         return view('admin/kategori/kategori_form_edit', $data);
     }
 
-    public function update($id){
+    public function update($ids){
         $user_session = session()->has('idadmin');
         if (!($user_session)) {
             return redirect()->to('/authadmin');
@@ -124,7 +124,7 @@ class Kategori extends BaseController
         }
 
         $this->kategoriModel->save([
-            'idkategori' => $id,
+            'idkategori' => $ids,
             'nama' => $this->request->getVar('nama')
         ]);
 

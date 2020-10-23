@@ -17,18 +17,18 @@ class KomentarModel extends Model
     protected $updatedField  = 'tgl_update';
 
     // FUNCTION & METHOD //
-    public function getDataKomentar($id = false)
+    public function getDataKomentar($ids = false)
     {
-        if ($id === false) {
+        if ($ids === false) {
             return $this->findAll();
         }
 
-        return $this->komentarModel->where(['idkomentar' => $id])->first();
+        return $this->komentarModel->where(['idkomentar' => $ids])->first();
     }
 
-    public function getKomentarByPost($idpost)
+    public function getKomentarByPost($idspost)
     {
         return $this->join('penulis', 'komentar.idpenulis = penulis.idpenulis')
-            ->where(['idpost' => $idpost])->find();
+            ->where(['idpost' => $idspost])->find();
     }
 }

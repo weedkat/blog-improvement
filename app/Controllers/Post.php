@@ -165,7 +165,7 @@ class Post extends BaseController
         return redirect()->to('/post/data');
     }
 
-    public function edit($id)
+    public function edit($ids)
     {
         $user_session = session()->get('idpenulis');
         if (!($user_session)) {
@@ -175,7 +175,7 @@ class Post extends BaseController
         $data = [
             'judul' => 'Edit Post',
             'validation' => \Config\Services::validation(),
-            'post' => $this->postModel->find($id),
+            'post' => $this->postModel->find($ids),
             'kategori' => $kategori,
             'user' => $this->penulisModel->where(['idpenulis' => $user_session])->first()
         ];
@@ -183,7 +183,7 @@ class Post extends BaseController
         return view('penulis/post/post_form_edit', $data);
     }
 
-    public function update($id)
+    public function update($ids)
     {
         $user_session = session()->has('idpenulis');
         if (!($user_session)) {
@@ -197,7 +197,7 @@ class Post extends BaseController
                 ]
             ],
             'judul' => [
-                'rules' => "required|is_unique[post.judul,idpost,{$id}]",
+                'rules' => "required|is_unique[post.judul,idpost,{$ids}]",
                 'errors' => [
                     'required' => '{field} harus diisi.',
                     'is_unique' => '{field} post sudah terdaftar'
@@ -218,7 +218,7 @@ class Post extends BaseController
                 ]
             ]
         ])) {
-            return redirect()->to('/post/edit/' . $id)->withInput();
+            return redirect()->to('/post/edit/' . $ids)->withInput();
         }
 
         $slug = url_title($this->request->getVar('judul'), '-', true);
@@ -249,26 +249,26 @@ class Post extends BaseController
         return redirect()->to('/post/data');
     }
 
-    public function delete($id)
+    public function delete($ids)
     {
         $user_session = session()->has('idpenulis');
         if (!($user_session)) {
             return redirect()->to('/authpenulis');
         }
 
-        $post = $this->postModel->find($id);
+        $post = $this->postModel->find($ids);
 
         if ($post["file_gambar"] != 'default.jpg') {
             unlink('assets/img/post/' . $post["file_gambar"]);
         }
-        $this->postModel->delete($id);
+        $this->postModel->delete($ids);
         sweetalert('Post berhasil dihapus', 'success', 'Berhasil!');
         return redirect()->to('/post/data');
     }
 
-    public function groupCategory($id)
+    public function groupCategory($ids)
     {
-        $post = $this->postModel->groupPost($id);
+        $post = $this->postModel->groupPost($ids);
 
         $data = [
             'title' => 'Group Post Berdasarkan Kategori',
