@@ -60,7 +60,6 @@ class PostModel extends Model
             ->limit($limit)
             ->orderBy('post.tgl_insert', 'DESC')
             ->find();
-        }
     }
 
     public function pencarianPost($keyword)
