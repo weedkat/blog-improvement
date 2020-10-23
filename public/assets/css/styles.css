@@ -1023,8 +1023,7 @@ header .main-menu li.drop-down a.mouseover + ul.drop-down-menu {
 }
 
 .bg-8 {
-  background: url(../img/template/latest_articles_4_400x600.jpg) no-repeat
-    center;
+  background: url(../img/template/latest_articles_4_400x600.jpg) no-repeat center;
   background-size: cover;
 }
 
@@ -1062,8 +1061,7 @@ header .main-menu li.drop-down a.mouseover + ul.drop-down-menu {
 }
 
 .bg-15 {
-  background: url(../img/template/latest_articles_6_400x600.jpg) no-repeat
-    center;
+  background: url(../img/template/latest_articles_6_400x600.jpg) no-repeat center;
   background-size: cover;
 }
 
