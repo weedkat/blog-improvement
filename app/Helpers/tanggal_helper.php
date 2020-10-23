@@ -54,8 +54,8 @@ function time_ago($timestamp)
 
 function bulan($date)
 {
-    $m = substr($date, 5, 2);
-    switch ($m) {
+    $month = substr($date, 5, 2);
+    switch ($month) {
         case 1:
             return "Januari";
         case 2:
@@ -85,8 +85,8 @@ function bulan($date)
 
 function month($date)
 {
-    $m = substr($date, 5, 2);
-    switch ($m) {
+    $month = substr($date, 5, 2);
+    switch ($month) {
         case 1:
             return "Jan";
         case 2:
@@ -117,48 +117,48 @@ function month($date)
 
 function tgl_indo($date)
 {
-    $d = tanggal($date);
-    $m = month($date);
-    $y = tahun($date);
-    return $d . " " . $m . " " . $y;
+    $day = tanggal($date);
+    $month = month($date);
+    $year = tahun($date);
+    return $day . " " . $month . " " . $year;
 }
 
 function indo_date($date)
 {
-    $d = tanggal($date);
-    $m = bulan($date);
-    $y = tahun($date);
-    return $d . " " . $m . " " . $y;
+    $day = tanggal($date);
+    $month = bulan($date);
+    $year = tahun($date);
+    return $day . " " . $month . " " . $year;
 }
 
 function tgl_default($date)
 {
-    $d = tanggal($date);
-    $m = bulan_angka($date);
-    $y = tahun($date);
-    return $d . "/" . $m . "/" . $y;
+    $day = tanggal($date);
+    $month = bulan_angka($date);
+    $year = tahun($date);
+    return $day . "/" . $month . "/" . $year;
 }
 
 function pukul($date)
 {
-    $d = substr($date, 11, 5);
-    return $d;
+    $day = substr($date, 11, 5);
+    return $day;
 }
 
 function tanggal($date)
 {
-    $d = substr($date, 8, 2);
-    return $d;
+    $day = substr($date, 8, 2);
+    return $day;
 }
 
 function bulan_angka($date)
 {
-    $y = substr($date, 5, 2);
-    return $y;
+    $year = substr($date, 5, 2);
+    return $year;
 }
 
 function tahun($date)
 {
-    $y = substr($date, 0, 4);
-    return $y;
+    $year = substr($date, 0, 4);
+    return $year;
 }
