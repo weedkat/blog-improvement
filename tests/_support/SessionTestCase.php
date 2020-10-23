@@ -25,8 +25,8 @@ class SessionTestCase extends CIUnitTestCase
 	 */
 	protected function mockSession()
 	{
-		$config        = config("App");
-		$this->session = new MockSession(new ArrayHandler($config, "0.0.0.0"), $config);
-		\Config\Services::injectMock("session", $this->session);
+		$config        = config('App');
+		$this->session = new MockSession(new ArrayHandler($config, '0.0.0.0'), $config);
+		\Config\Services::injectMock('session', $this->session);
 	}
 }
