@@ -18,32 +18,35 @@ function time_ago($timestamp)
             return "one minute ago";
         }
         return "$minutes minutes ago";
-    } else if ($hours <= 24) {
+    }
+    if ($hours <= 24) {
         if ($hours == 1) {
             return "an hour ago";
         }
         return "$hours hrs ago";
-    } else if ($days <= 7) {
+    }
+    if ($days <= 7) {
         if ($days == 1) {
             return "yesterday";
         }
         return "$days days ago";
-    } else if ($weeks <= 4.3) {  //4.3 == 52/12
+    }
+    if ($weeks <= 4.3) {  //4.3 == 52/12
         if ($weeks == 1) {
             return "a week ago";
         }
         return "$weeks weeks ago";
-    } else if ($months <= 12) {
+    }
+    if ($months <= 12) {
         if ($months == 1) {
             return "a month ago";
         }
         return "$months months ago";
-    } else {
-        if ($years == 1) {
-            return "one year ago";
-        }
-        return "$years years ago";
     }
+    if ($years == 1) {
+        return "one year ago";
+    }
+    return "$years years ago";
 }
 
 function bulan($date)

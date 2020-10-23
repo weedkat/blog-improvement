@@ -54,12 +54,12 @@ class PostModel extends Model
                 ->join('kategori', 'post.idkategori = kategori.idkategori')
                 ->orderBy('post.tgl_insert', 'DESC')
                 ->find();
-        } else {
-            return $this->join('penulis', 'post.idpenulis = penulis.idpenulis')
-                ->join('kategori', 'post.idkategori = kategori.idkategori')
-                ->limit($limit)
-                ->orderBy('post.tgl_insert', 'DESC')
-                ->find();
+        }
+        return $this->join('penulis', 'post.idpenulis = penulis.idpenulis')
+            ->join('kategori', 'post.idkategori = kategori.idkategori')
+            ->limit($limit)
+            ->orderBy('post.tgl_insert', 'DESC')
+            ->find();
         }
     }
 
