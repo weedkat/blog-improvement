@@ -6,7 +6,7 @@ use CodeIgniter\Database\Migration;
 
 class Penulis extends Migration
 {
-	public function up()
+	public function upload()
 	{
 		$this->forge->addField([
 			'idpenulis'          => [

@@ -6,7 +6,7 @@ use CodeIgniter\Database\Migration;
 
 class Admin extends Migration
 {
-	public function up()
+	public function upload()
 	{
 		$this->forge->addField([
 			'idadmin'          => [

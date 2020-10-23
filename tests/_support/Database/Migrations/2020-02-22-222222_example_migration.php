@@ -6,7 +6,7 @@ class ExampleMigration extends Migration
 {
 	protected $DBGroup = 'tests';
 
-	public function up()
+	public function upload()
 	{
 		$fields = [
 			'name'       => [
