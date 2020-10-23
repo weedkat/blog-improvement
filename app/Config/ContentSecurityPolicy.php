@@ -20,7 +20,7 @@ class ContentSecurityPolicy extends BaseConfig
 
 	public $reportOnly              = false; // default CSP report context
 	public $reportURI               = null; // URL to send violation reports to
-	public $upgradeInsecureRequests = false; // toggle for forcing https
+	public $upgradeInsecReq = false; // toggle for forcing https
 
 	// sources allowed; string or array of strings
 	// Note: once you set a policy to 'none', it cannot be further restricted

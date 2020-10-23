@@ -37,10 +37,9 @@ class AuthAdmin extends BaseController
                     'required' => '{field} harus diisi.'
                 ]
             ],
-        ])) {
+        ])){
             return redirect()->to('/authadmin')->withInput();
         }
-
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
 
@@ -49,21 +48,17 @@ class AuthAdmin extends BaseController
             if ($admin["password"] !== md5($password)) {
                 sweetalert('Maaf password Anda salah', 'error', 'Gagal!');
                 return redirect()->to('/authadmin')->withInput();
-            } else {
-                $sessData = [
-                    'emailAdmin' => $admin["email"],
-                    'idadmin' => $admin["idadmin"],
-                    'isLoggedInAdmin' => TRUE
-                ];
-
-                session()->set($sessData);
-
-                return redirect()->to('/admin');
             }
-        } else {
-            sweetalert('Maaf akun Anda tidak terdaftar', 'error', 'Gagal!');
-            return redirect()->to('/authadmin')->withInput();
+            $sessData = [
+                'emailAdmin' => $admin["email"],
+                'idadmin' => $admin["idadmin"],
+                'isLoggedInAdmin' => TRUE
+            ];
+            session()->set($sessData);
+            return redirect()->to('/admin');
         }
+        sweetalert('Maaf akun Anda tidak terdaftar', 'error', 'Gagal!');
+        return redirect()->to('/authadmin')->withInput();
     }
 
     public function logout()

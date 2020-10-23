@@ -13,7 +13,8 @@ function time_ago($timestamp)
     $years        = round($seconds / 31553280);   //(365+365+365+365+366)/5 * 24 * 60 * 60  
     if ($seconds <= 60) {
         return "Just Now";
-    } else if ($minutes <= 60) {
+    } 
+    if ($minutes <= 60) {
         if ($minutes == 1) {
             return "one minute ago";
         }

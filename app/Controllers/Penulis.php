@@ -106,11 +106,9 @@ class Penulis extends BaseController
             sweetalert('Data berhasil diubah', 'success', 'Berhasil!');
 
             return redirect()->back();
-        } else{
-            sweetalert('Masukkan password dengan benar', 'error', 'Password salah!');
-
-            return redirect()->back()->withInput();
         }
+        sweetalert('Masukkan password dengan benar', 'error', 'Password salah!');
+        return redirect()->back()->withInput();
     }
 
     public function ubahPassword($ids){
@@ -177,10 +175,8 @@ class Penulis extends BaseController
             sweetalert('Password berhasil diubah', 'success', 'Berhasil!');
 
             return redirect()->back();
-        } else{
-            sweetalert('Masukkan password dengan benar', 'error', 'Password salah!');
-
-            return redirect()->back()->withInput();
         }
+        sweetalert('Masukkan password dengan benar', 'error', 'Password salah!');
+        return redirect()->back()->withInput();
     }
 }
