@@ -29,7 +29,7 @@
                                         <td scope="row"><?= $i++ ?></td>
                                         <td><?= $p["nama"] ?></td>
                                         <td><?= $p["email"] ?></td>
-                                        <td><?= esc_attr($p["tgl_insert"]) ?></td>
+                                        <td><?= $p["tgl_insert"] ?></td>
                                         <td>
                                                 <button href="/admin/process_reset/<?= $p["idpenulis"] ?>" type="submit" class="btn btn-danger btn-sm mt-1 tombol-reset" data-text="<?= $title ?>" title="Reset Password">Reset Password</button>
                                         </td>
