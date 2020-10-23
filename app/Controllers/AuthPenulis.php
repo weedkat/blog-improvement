@@ -193,9 +193,8 @@ class AuthPenulis extends BaseController
             $agent = $this->request->getUserAgent();
             if ($agent->isReferral()) {
                 return redirect()->to('/authpenulis');
-            } else {
-                return redirect()->to($agent->getReferrer());
             }
+            return redirect()->to($agent->getReferrer());
         }
         sweetalert('Maaf akun Anda tidak terdaftar', 'error', 'Gagal!');
         return redirect()->to('/authpenulis')->withInput();
