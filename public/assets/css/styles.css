@@ -57,7 +57,7 @@ ul,
 span,
 li,
 img,
-inpot,
+input,
 button {
   margin: 0;
   padding: 0;
@@ -165,7 +165,7 @@ span {
   line-height: inherit;
 }
 
-[class^="icon-"]:before,
+[class^="icon-"]::before,
 [class*=" icon-"]:before {
   line-height: inherit;
 }
@@ -924,7 +924,7 @@ header .main-menu li.drop-down a.mouseover + ul.drop-down-menu {
   color: #e14a3d;
 }
 
-/* BACKGROUND COLOR*/
+/*BACKGROUND COLOR*/
 
 .bg-191 {
   background: #191919;
