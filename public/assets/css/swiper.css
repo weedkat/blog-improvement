@@ -14,7 +14,6 @@
   margin-right: auto;
   position: relative;
   overflow: hidden;
-  
   /* Fix of Webkit flickering */
   z-index: 1;
 }
@@ -267,6 +266,11 @@
   position: relative;
 }
 
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #007aff;
+}
+
 .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
@@ -321,16 +325,11 @@ button.swiper-pagination-bullet {
   cursor: pointer;
 }
 
-.swiper-pagination-bullet-active {
-  opacity: 1;
-  background: #007aff;
-}
-
 .swiper-container-vertical > .swiper-pagination-bullets {
   right: 10px;
   top: 50%;
-  -webkit-transform: translate3d(0px, -50%, 0);
-  transform: translate3d(0px, -50%, 0);
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
 }
 
 .swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
@@ -425,7 +424,7 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-pagination-white .swiper-pagination-bullet-active {
-  background: #ffffff;
+  background: #fff;
 }
 
 .swiper-pagination-progressbar.swiper-pagination-white {
@@ -437,7 +436,7 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-pagination-black .swiper-pagination-bullet-active {
-  background: #000000;
+  background: #000;
 }
 
 .swiper-pagination-progressbar.swiper-pagination-black {

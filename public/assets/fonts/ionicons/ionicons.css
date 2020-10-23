@@ -105,11 +105,11 @@
 
 .ion-android-cloud-outline:before { content: "\f379"; }
 
-.ion-android-color-palette:before { content: "\f37b"; }
+.ion-android-color-palette::before { content: "\f37b"; }
 
-.ion-android-compass:before { content: "\f37c"; }
+.ion-android-compass::before { content: "\f37c"; }
 
-.ion-android-contact:before { content: "\f2d8"; }
+.ion-android-contact::before { content: "\f2d8"; }
 
 .ion-android-contacts:before { content: "\f2d9"; }
 
