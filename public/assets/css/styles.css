@@ -795,7 +795,7 @@ header .main-menu li.drop-down a.mouseover+ul.drop-down-menu {
 }
 
 .text-right {
-	text-align: right !important;
+	text-align: right;
 }
 
 
@@ -1846,7 +1846,7 @@ footer i {
 .swiper-scrollbar-drag {
 	height: 5px;
 	top: -3px;
-	width: 350px !important;
+	width: 350px;
 	border-radius: 0px;
 	background: #fff;
 }
@@ -1919,7 +1919,7 @@ footer i {
 }
 
 .w-50 {
-	width: 50% !important;
+	width: 50%;
 }
 
 .w-55 {
@@ -2015,7 +2015,7 @@ footer i {
 }
 
 .h-3-4 {
-	height: 75% !important;
+	height: 75%;
 }
 
 .h-100vh {
@@ -2112,7 +2112,7 @@ footer i {
 }
 
 .min-h-350x {
-	min-height: 350px !important;
+	min-height: 350px;
 }
 
 .min-h-400x {
@@ -2120,7 +2120,7 @@ footer i {
 }
 
 .min-h-500x {
-	min-height: 500px !important;
+	min-height: 500px;
 }
 
 .mx-w-400x {
@@ -2343,7 +2343,7 @@ footer i {
 	}
 
 	.h-lg-900x {
-		height: 900px !important;
+		height: 900px;
 	}
 
 	.mx-w-lg-400x {
@@ -2363,7 +2363,7 @@ footer i {
 	}
 
 	.w-md-10 {
-		width: 10% !important;
+		width: 10%;
 	}
 
 	.w-md-20 {
@@ -2395,7 +2395,7 @@ footer i {
 	}
 
 	.w-md-90 {
-		width: 90% !important;
+		width: 90%;
 	}
 
 	.w-md-100 {
@@ -2407,7 +2407,7 @@ footer i {
 	}
 
 	.w-md-1-3 {
-		width: 33.33% !important;
+		width: 33.33%;
 	}
 
 	.w-md-2-3 {
@@ -2451,7 +2451,7 @@ footer i {
 	}
 
 	.h-md-90 {
-		height: 90% !important;
+		height: 90%;
 	}
 
 	.h-md-100 {
@@ -2512,7 +2512,7 @@ footer i {
 	}
 
 	.w-md-800x {
-		width: 800px !important;
+		width: 800px;
 	}
 
 	.w-md-900x {
@@ -2584,7 +2584,7 @@ footer i {
 	}
 
 	.w-sm-30 {
-		width: 30% !important;
+		width: 30%;
 	}
 
 	.w-sm-40 {
@@ -2680,7 +2680,7 @@ footer i {
 	}
 
 	.h-sm-2-3 {
-		height: 66.666% !important;
+		height: 66.666%;
 	}
 
 	.h-sm-3-4 {
@@ -2709,7 +2709,7 @@ footer i {
 	}
 
 	.w-sm-400x {
-		width: 400px !important;
+		width: 400px;
 	}
 
 	.w-sm-500x {
@@ -2749,7 +2749,7 @@ footer i {
 	}
 
 	.h-sm-400x {
-		height: 400px !important;
+		height: 400px;
 	}
 
 	.h-sm-500x {
@@ -2861,7 +2861,7 @@ footer i {
 	}
 
 	.h-xs-40 {
-		height: 40% !important;
+		height: 40%;
 	}
 
 	.h-xs-50 {
@@ -2885,7 +2885,7 @@ footer i {
 	}
 
 	.h-xs-100 {
-		height: 100% !important;
+		height: 100%;
 	}
 
 	.h-xs-1-4 {
