@@ -65,10 +65,9 @@ class AuthPenulis extends BaseController
             //     dd($agent->getReferrer());
             // }
             return redirect()->to('/penulis');
-        } else {
-            sweetalert('Maaf akun Anda tidak terdaftar', 'error', 'Gagal!');
-            return redirect()->to('/authpenulis')->withInput();
         }
+        sweetalert('Maaf akun Anda tidak terdaftar', 'error', 'Gagal!');
+        return redirect()->to('/authpenulis')->withInput();
     }
 
     public function register()
