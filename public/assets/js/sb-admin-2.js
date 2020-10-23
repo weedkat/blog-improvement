@@ -2,7 +2,7 @@
   "use strict"; // Start of use strict
 
   // Toggle the side navigation
-  $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
+  $("#sidebarToggle, #sidebarToggleTop").on("click", function(e) {
     $("body").toggleClass("sidebar-toggled");
     $(".sidebar").toggleClass("toggled");
     if ($(".sidebar").hasClass("toggled")) {
@@ -41,7 +41,7 @@
   $(document).on("click", "a.scroll-to-top", function(e) {
     var $anchor = $(this);
     $("html, body").stop().animate({
-      scrollTop: ($($anchor.attr('href')).offset().top)
+      scrollTop: ($($anchor.attr("href")).offset().top)
     }, 1000, "easeInOutExpo");
     e.preventDefault();
   });
