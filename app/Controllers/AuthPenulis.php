@@ -24,7 +24,6 @@ class AuthPenulis extends BaseController
 
     public function login()
     {
-        $agent = $this->request->getUserAgent();
         if (!$this->validate([
             'email' => [
                 'rules' => 'required',
