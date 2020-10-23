@@ -122,6 +122,13 @@ button {
   transition: all 0.25s ease-in-out;
 }
 
+button {
+  outline: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
 a:focus,
 a:active,
 a:hover,
@@ -150,13 +157,6 @@ li {
 
 span {
   display: inline-block;
-}
-
-button {
-  outline: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
 }
 
 .icon {
