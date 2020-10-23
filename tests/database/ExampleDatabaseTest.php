@@ -25,8 +25,8 @@ class ExampleDatabaseTest extends \Tests\Support\DatabaseTestCase
 	public function testSoftDeleteLeavesRow()
 	{
 		$model = new ExampleModel();
-		$this->setPrivateProperty($model, 'useSoftDeletes', true);
-		$this->setPrivateProperty($model, 'tempUseSoftDeletes', true);
+		$this->setPrivateProperty($model, "useSoftDeletes", true);
+		$this->setPrivateProperty($model, "tempUseSoftDeletes", true);
 
 		$object = $model->first();
 		$model->delete($object->id);
@@ -35,7 +35,7 @@ class ExampleDatabaseTest extends \Tests\Support\DatabaseTestCase
 		$this->assertNull($model->find($object->id));
 
 		// ... but it should still be in the database
-		$result = $model->builder()->where('id', $object->id)->get()->getResult();
+		$result = $model->builder()->where("id", $object->id)->get()->getResult();
 
 		$this->assertCount(1, $result);
 	}
